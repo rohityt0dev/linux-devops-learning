@@ -1,125 +1,77 @@
-📚 Command-Reference.md
-Linux Command Reference
-Navigation
-Command	Purpose
-pwd	Show current directory
-ls	List files
-cd	Change directory
-tree	Show directory tree
-System Information
-Command	Purpose
-whoami	Current user
-hostname	Hostname
-uname -a	System information
-date	Date/time
-uptime	System uptime
-free -h	Memory information
-df -h	Disk filesystem usage
-du -sh	Directory size
-Files
-Command	Purpose
-touch	Create file
-cat	Display file
-less	View file
-head	First lines
-tail	Last lines
-cp	Copy
-mv	Move/rename
-rm	Remove
-file	File type
-stat	File metadata
-Directories
-Command	Purpose
-mkdir	Create directory
-mkdir -p	Create nested directories
-rmdir	Remove empty directory
-ls -la	List including hidden files
-Text Processing
-Command	Purpose
-grep	Search text
-sort	Sort lines
-uniq	Remove/count duplicates
-cut	Extract fields
-tr	Translate characters
-awk	Process text
-sed	Edit/process streams
-wc	Count lines/words/bytes
-Search
-Command	Purpose
-find	Search files/directories
-locate	Search filename database
-which	Find executable
-whereis	Find command locations
-grep	Search file contents
-Archive & Compression
-Command	Purpose
-tar	Create/extract archives
-gzip	Compress
-gunzip	Decompress gzip
-zip	Create ZIP archive
-unzip	Extract ZIP archive
-🔀 Pipes & Redirection
-Pipe
-command1 | command2
+# 📚 Linux Command Reference
 
-Example:
+## 🎯 Objective
 
-ps aux | grep nginx
-Output
-command > file.txt
-Append
-command >> file.txt
-Error
-command 2> error.txt
-Output + Error
-command > output.txt 2>&1
-🔥 Most Useful Commands for Cloud Engineers
-ls
-cd
-pwd
-cat
-less
-tail
-grep
-find
-cp
-mv
-rm
-df
-du
-free
-ps
-top
-systemctl
-journalctl
-ssh
-tar
+Learn and revise essential Linux commands for system administration, troubleshooting, and cloud engineering.
 
-The commands related to processes, services, networking, storage, SSH, and other administration topics are covered in their dedicated repository sections.
+## 1. Navigation
 
-🧪 Daily Command Practice
+| Command | Purpose |
+|---|---|
+| `pwd` | Show current directory |
+| `ls` | List files |
+| `ls -lah` | List all files with details |
+| `cd` | Change directory |
+| `tree` | Display directory tree |
 
-Every Linux practice session, run:
+## 2. System Information
 
-pwd
-whoami
-hostname
-date
-ls -lah
-df -h
-free -h
-uptime
+| Command | Purpose |
+|---|---|
+| `whoami` | Show current user |
+| `hostname` | Show hostname |
+| `uname -a` | Show system information |
+| `cat /etc/os-release` | Show Linux distribution |
+| `date` | Display date and time |
+| `uptime` | Show system uptime |
+| `free -h` | Display memory usage |
+| `df -h` | Display filesystem usage |
+| `du -sh directory/` | Show directory size |
 
-Then choose one log:
+## 3. Files and Directories
 
-tail -20 /var/log/syslog
+| Command | Purpose |
+|---|---|
+| `touch file.txt` | Create an empty file |
+| `cat file.txt` | Display file contents |
+| `less file.txt` | View a file page by page |
+| `head file.txt` | Show first lines |
+| `tail file.txt` | Show last lines |
+| `cp source destination` | Copy files |
+| `mv source destination` | Move or rename files |
+| `rm file.txt` | Remove a file |
+| `file file.txt` | Identify file type |
+| `stat file.txt` | Display file metadata |
+| `mkdir directory` | Create a directory |
+| `mkdir -p a/b` | Create nested directories |
+| `rmdir directory` | Remove an empty directory |
+| `ls -la` | Include hidden files |
 
-or, depending on your distribution:
+## 4. Text Processing
 
-tail -20 /var/log/messages
+| Command | Purpose |
+|---|---|
+| `grep "error" file.txt` | Search text |
+| `sort file.txt` | Sort lines |
+| `uniq file.txt` | Remove adjacent duplicates |
+| `cut -d: -f1 file.txt` | Extract fields |
+| `tr 'a-z' 'A-Z'` | Translate characters |
+| `awk '{print $1}' file.txt` | Extract columns |
+| `sed 's/old/new/g' file.txt` | Replace text in output |
+| `wc -l file.txt` | Count lines |
 
-Search:
+## 5. Search Commands
 
-grep -i "error" /var/log/*.log
+| Command | Purpose |
+|---|---|
+| `find /path -name "*.log"` | Search for files |
+| `locate file.txt` | Search filename database |
+| `which python3` | Find executable in PATH |
+| `whereis bash` | Find command-related files |
+| `grep -i "error" file.txt` | Search text ignoring case |
 
----
+## 6. Archive and Compression
+
+| Command | Purpose |
+|---|---|
+| `tar -cvf backup

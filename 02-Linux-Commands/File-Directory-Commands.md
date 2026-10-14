@@ -1,159 +1,158 @@
-📘 File-Directory-Commands.md
-File & Directory Commands
-🎯 Objective
+# 📘 File & Directory Commands
 
-Learn how to create, copy, move, rename, inspect, and remove files and directories.
+## 🎯 Objective
 
-1. mkdir
+Learn how to create, copy, move, rename, inspect, and remove files and directories in Linux.
 
-Create directory:
+## 1. `mkdir` — Create Directories
 
+```bash
 mkdir project
-
-Multiple directories:
-
 mkdir dev test backup
-
-Create nested directories:
-
 mkdir -p project/app/logs
-2. touch
+```
 
-Create an empty file:
+- `mkdir` creates directories.
+- `-p` creates parent directories when needed.
 
+## 2. `touch` — Create Files
+
+```bash
 touch file.txt
-
-Multiple files:
-
 touch file1.txt file2.txt file3.txt
-3. cp
+```
 
-Copy file:
+Creates empty files or updates timestamps on existing files.
 
+## 3. `cp` — Copy Files and Directories
+
+```bash
 cp file.txt backup.txt
-
-Copy into directory:
-
 cp file.txt backup/
-
-Copy directory recursively:
-
 cp -r project project-backup
-4. mv
+```
 
-Move file:
+- `cp` copies files.
+- `-r` copies directories recursively.
 
+## 4. `mv` — Move or Rename
+
+```bash
 mv file.txt backup/
-
-Rename:
-
 mv old.txt new.txt
-
-Move and rename:
-
 mv old.txt backup/new.txt
-5. rm
+```
 
-Remove file:
+Use `mv` to move files or rename them.
 
+## 5. `rm` — Remove Files and Directories
+
+```bash
 rm file.txt
-
-Remove multiple files:
-
 rm file1.txt file2.txt
-
-Remove directory recursively:
-
 rm -r directory
-
-Force removal:
-
 rm -rf directory
+```
 
-⚠️ Always verify the path before using destructive commands.
+- `-r` removes directories recursively.
+- `-f` forces removal without confirmation prompts.
 
-6. file
+⚠️ **Warning:** Verify the path before using `rm -r` or `rm -rf`. Deleted files may not be recoverable.
 
-Identify file type:
+## 6. `file` — Identify File Type
 
+```bash
 file example.txt
-7. stat
+```
 
-Show detailed file information:
+Displays information about a file's detected type.
 
+## 7. `stat` — File Information
+
+```bash
 stat file.txt
+```
 
-Information includes:
+Displays file metadata, including:
 
-Size
-Permissions
-Owner
-Timestamps
-Inode
-8. tree
+- Size
+- Permissions
+- Owner and group
+- Timestamps
+- Inode number
 
-If installed:
+## 8. `tree` — Display Directory Structure
 
+```bash
 tree
+tree project/
+```
 
 Example:
 
+```text
 project/
 ├── app/
 ├── logs/
 └── backup/
-9. Wildcards
-*
+```
 
-Matches multiple characters.
+Install `tree` if it is unavailable on your system.
 
-ls *.txt
-?
+## 9. Wildcards
 
-Matches one character.
+| Wildcard | Purpose | Example |
+|---|---|---|
+| `*` | Matches multiple characters | `ls *.txt` |
+| `?` | Matches one character | `ls file?.txt` |
+| `[]` | Matches selected characters | `ls file[123].txt` |
 
-ls file?.txt
-[]
+## 10. 🧪 Practical Lab
 
-Matches selected characters.
+### Step 1: Create the directory structure
 
-ls file[123].txt
-10. Practical Lab
-
-Create:
-
-linux-files/
-├── documents/
-├── logs/
-├── backups/
-└── scripts/
-
-Commands:
-
+```bash
 mkdir -p linux-files/{documents,logs,backups,scripts}
+```
 
-Create files:
+### Step 2: Create sample files
 
+```bash
 touch linux-files/documents/readme.txt
 touch linux-files/logs/application.log
 touch linux-files/scripts/test.sh
+```
 
-Copy:
+### Step 3: Copy a file
 
+```bash
 cp linux-files/documents/readme.txt linux-files/backups/
+```
 
-Rename:
+### Step 4: Rename a file
 
+```bash
 mv linux-files/scripts/test.sh linux-files/scripts/test-script.sh
+```
 
-Inspect:
+### Step 5: Inspect files
 
+```bash
 file linux-files/documents/readme.txt
 stat linux-files/documents/readme.txt
-🎯 Challenge
+```
 
-Create:
+### Step 6: Display the structure
 
+```bash
+tree linux-files/
+```
+
+## 🎯 Challenge
+
+Create this structure:
+
+```text
 cloud-lab/
 ├── aws/
 │   ├── ec2/
@@ -161,19 +160,39 @@ cloud-lab/
 │   └── vpc/
 ├── azure/
 └── backups/
+```
 
-Then:
+**Tasks:**
 
-Create one file in every directory.
-Copy the AWS files into backups.
-Rename one file.
-Move one file.
-Display the entire structure.
-Delete only a test file.
-☁️ AWS Connection
+1. Create the directory structure.
+2. Create one test file in every directory.
+3. Copy the AWS files into `backups/`.
+4. Rename one file.
+5. Move one file.
+6. Display the complete structure using `tree`.
+7. Delete only a designated test file.
 
-These commands are used when managing application files on EC2:
+Hint:
 
+```bash
+mkdir -p cloud-lab/{aws/{ec2,s3,vpc},azure,backups}
+```
+
+## ☁️ Cloud Engineering Connection
+
+These commands are useful for managing application files on Linux servers, including AWS EC2 instances.
+
+```text
+/var/www/html/
+├── index.html
+├── css/
+├── js/
+└── images/
+```
+
+Common commands:
+
+```bash
 mkdir
 cp
 mv
@@ -181,14 +200,19 @@ rm
 find
 ls
 stat
+```
 
-Example:
+Use these commands to organize website files, deploy application updates, inspect permissions, and clean up temporary files.
 
-EC2
-└── /var/www/html
-    ├── index.html
-    ├── css/
-    ├── js/
-    └── images/
+## ✅ What I Learned
+
+- Creating files and directories
+- Copying, moving, and renaming files
+- Removing files and directories safely
+- Inspecting file types and metadata
+- Using wildcards
+- Building directory structures through hands-on practice
 
 ---
+
+**Next Topic:** Text Processing Commands
