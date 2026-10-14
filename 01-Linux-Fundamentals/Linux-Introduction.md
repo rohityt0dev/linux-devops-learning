@@ -12,8 +12,6 @@ Linux is an open-source, Unix-like operating system kernel. It is widely used in
 * Kubernetes
 * Networking
 * Cybersecurity
-* Embedded systems
-* Supercomputers
 
 Linux is especially important for a Cloud Engineer because many cloud workloads run on Linux-based servers.
 
