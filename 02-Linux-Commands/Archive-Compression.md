@@ -1,126 +1,172 @@
-📦 Archive-Compression.md
-Archive & Compression
-🎯 Objective
+# Archive & Compression
 
-Learn how to create archives, compress files, and extract backups.
+## 🎯 Objective
 
-These skills are important for:
+Learn how to create archives, compress files, extract backups, and manage files efficiently in Linux.
 
-Backups
-Log collection
-Application deployment
-File transfer
-Cloud administration
-1. tar
+### 📌 Why It Is Important
 
-Create archive:
+- Backups and recovery
+- Log collection
+- Application deployment
+- File transfer
+- Cloud administration
 
+## 1. TAR
+
+Create an archive:
+
+```bash
 tar -cvf backup.tar files/
+```
 
-Options:
+Extract an archive:
 
--c = create
--v = verbose
--f = file
-
-Extract:
-
+```bash
 tar -xvf backup.tar
+```
 
-List contents:
+List archive contents:
 
+```bash
 tar -tvf backup.tar
-2. tar.gz
+```
 
-Create compressed archive:
+## 2. TAR.GZ
 
+Create a compressed archive:
+
+```bash
 tar -czvf backup.tar.gz files/
+```
 
-Extract:
+Extract a compressed archive:
 
+```bash
 tar -xzvf backup.tar.gz
-
-Options:
-
--c = create
--x = extract
--z = gzip
--v = verbose
--f = file
-3. gzip
-
-Compress:
-
-gzip file.txt
-
-Result:
-
-file.txt.gz
-
-Decompress:
-
-gunzip file.txt.gz
-4. zip
-
-Create ZIP:
-
-zip backup.zip file1.txt file2.txt
-
-Directory:
-
-zip -r backup.zip directory/
-5. unzip
-
-Extract:
-
-unzip backup.zip
+```
 
 List contents:
 
+```bash
+tar -tzvf backup.tar.gz
+```
+
+## 3. GZIP
+
+Compress a file:
+
+```bash
+gzip file.txt
+```
+
+Decompress a file:
+
+```bash
+gunzip file.txt.gz
+```
+
+## 4. ZIP
+
+Create a ZIP archive:
+
+```bash
+zip backup.zip file1.txt file2.txt
+```
+
+Compress a directory:
+
+```bash
+zip -r backup.zip directory/
+```
+
+## 5. UNZIP
+
+Extract a ZIP archive:
+
+```bash
+unzip backup.zip
+```
+
+List contents:
+
+```bash
 unzip -l backup.zip
-🧪 Archive Lab
+```
 
-Create:
+## 🧪 Hands-On Lab
 
+Create sample files:
+
+```bash
 mkdir archive-lab
-touch archive-lab/file1.txt
-touch archive-lab/file2.txt
-touch archive-lab/file3.txt
+touch archive-lab/file1.txt archive-lab/file2.txt archive-lab/file3.txt
+```
 
-Create TAR:
+Create TAR and TAR.GZ archives:
 
+```bash
 tar -cvf archive.tar archive-lab/
-
-Create TAR.GZ:
-
 tar -czvf archive.tar.gz archive-lab/
+```
 
-List:
+Verify the compressed archive:
 
-tar -tvf archive.tar.gz
+```bash
+tar -tzf archive.tar.gz
+```
 
-Extract:
+Extract the archive:
 
+```bash
 mkdir extracted
 tar -xzvf archive.tar.gz -C extracted/
+```
 
-Create ZIP:
+Create and extract a ZIP archive:
 
+```bash
 zip -r archive.zip archive-lab/
-
-Extract:
-
 unzip archive.zip
-☁️ AWS Backup Example
+```
 
-A simple application backup:
+## ☁️ Linux Backup Example
 
-tar -czvf application-backup.tar.gz /var/www/html/
+Create a backup of website files:
 
-Verify:
+```bash
+sudo tar -czvf application-backup.tar.gz -C /var/www html
+```
 
+Verify the backup:
+
+```bash
 tar -tzf application-backup.tar.gz
+```
 
-This is a basic Linux-side backup operation. Later, the archive can be integrated with cloud storage such as Amazon S3.
+> **Note:** Store backups in a safe location and test extraction regularly. This command creates a local archive; it does not upload the backup to cloud storage.
+
+## 📚 Quick Reference
+
+| Command | Purpose |
+|---|---|
+| `tar -cvf` | Create TAR archive |
+| `tar -xvf` | Extract TAR archive |
+| `tar -czvf` | Create compressed TAR archive |
+| `tar -tzf` | List TAR.GZ contents |
+| `gzip` | Compress a file |
+| `gunzip` | Decompress a file |
+| `zip -r` | Compress a directory |
+| `unzip` | Extract ZIP archive |
+
+## ✅ What I Learned
+
+- Creating and extracting TAR archives
+- Compressing files with GZIP
+- Creating and extracting ZIP archives
+- Verifying archive contents
+- Performing basic Linux backups
 
 ---
+
+**Next Topic:** Linux File Searching Commands
