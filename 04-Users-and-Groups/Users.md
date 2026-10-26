@@ -109,7 +109,7 @@ Example:
 
 ---
 
-# 10. System Users
+# 7. System Users
 
 Linux also has service/system accounts.
 

@@ -15,7 +15,7 @@ usermod
 userdel
 passwd
 id
-chage
+check
 ```
 
 ---

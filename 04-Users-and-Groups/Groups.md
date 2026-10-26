@@ -30,13 +30,10 @@ Users
 - Primary groups
 - Secondary groups
 - `/etc/group`
-- `/etc/gshadow`
 - `groupadd`
 - `groupmod`
 - `groupdel`
 - `usermod`
-- `gpasswd`
-- Group troubleshooting
 
 ---
 
@@ -133,7 +130,7 @@ id alice
 
 ---
 
-# 10. Rename Group
+# 7. Rename Group
 
 ```bash
 sudo groupmod -n dev-team developers
@@ -141,7 +138,7 @@ sudo groupmod -n dev-team developers
 
 ---
 
-# 11. Delete Group
+# 8. Delete Group
 
 ```bash
 sudo groupdel developers
