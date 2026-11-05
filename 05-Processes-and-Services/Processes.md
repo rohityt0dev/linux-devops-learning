@@ -33,21 +33,10 @@ also run as processes.
 By completing this document, you will understand:
 
 - What a process is
-- PID
-- PPID
-- Parent and child processes
-- Process states
-- Foreground processes
 - Background processes
-- `/proc`
 - `ps`
 - `top`
 - `htop`
-- `pstree`
-- Jobs
-- `bg`
-- `fg`
-- `nohup`
 - Process monitoring
 
 ---
@@ -72,12 +61,6 @@ All users:
 
 ```bash
 ps aux
-```
-
-Another common format:
-
-```bash
-ps -ef
 ```
 
 ---
@@ -127,18 +110,6 @@ Search for nginx:
 
 ```bash
 ps aux | grep nginx
-```
-
-Better:
-
-```bash
-pgrep nginx
-```
-
-Show full details:
-
-```bash
-pgrep -a nginx
 ```
 
 ---
