@@ -11,10 +11,6 @@ It is responsible for starting and managing important system components and serv
 You will learn:
 
 - What systemd is
-- PID 1
-- Units
-- Services
-- Targets
 - Dependencies
 - `systemctl`
 - `journalctl`
@@ -210,22 +206,6 @@ journalctl -u nginx -f
 
 ---
 
-# 🧩 Service Dependencies
-
-View dependencies:
-
-```bash
-systemctl list-dependencies nginx
-```
-
-Reverse dependencies:
-
-```bash
-systemctl list-dependencies --reverse nginx
-```
-
----
-
 # 📄 View Unit Configuration
 
 ```bash
@@ -237,26 +217,6 @@ Show detailed properties:
 ```bash
 systemctl show nginx
 ```
----
-
-# 📚 Important Unit Directories
-
-Common locations include:
-
-```text
-/etc/systemd/system/
-/usr/lib/systemd/system/
-/lib/systemd/system/
-```
-
-Distribution-specific locations can differ.
-
-Local administrator-created unit files are commonly placed under:
-
-```text
-/etc/systemd/system/
-```
-
 ---
 
 # 🔄 daemon-reload
