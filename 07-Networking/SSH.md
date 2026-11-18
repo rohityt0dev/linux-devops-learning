@@ -507,84 +507,8 @@ Correct username?
        ↓
 Correct private key?
 ```
-
 ---
 
-# 🎯 Interview Questions
-
-### What is SSH?
-
-A protocol used for secure remote access and related encrypted operations.
-
-### What is the default SSH port?
-
-```text
-22/TCP
-```
-
-### What is the difference between a private and public key?
-
-The private key remains secret with the client.
-
-The public key can be installed on the server for authentication.
-
-### Where are authorized SSH public keys stored?
-
-Typically:
-
-```text
-~/.ssh/authorized_keys
-```
-
-### Where is SSH server configuration?
-
-Typically:
-
-```text
-/etc/ssh/sshd_config
-```
-
-### How do you check whether SSH is listening?
-
-```bash
-sudo ss -tlnp | grep :22
-```
-
-### How do you check SSH service?
-
-```bash
-systemctl status sshd
-```
-
-or:
-
-```bash
-systemctl status ssh
-```
-
----
-
-# ⭐ AWS Interview Scenario
-
-**Question:**
-
-> My EC2 instance is in a public subnet but I cannot SSH into it. What will you check?
-
-Strong answer:
-
-```text
-1. Verify instance is running
-2. Verify correct public IP/EIP
-3. Verify Security Group allows TCP 22 from my source IP
-4. Verify subnet route table has route to Internet Gateway
-5. Verify Internet Gateway is attached
-6. Verify NACL rules
-7. Verify Linux firewall
-8. Verify sshd is running
-9. Verify port 22 is listening
-10. Verify correct username
-11. Verify correct private key
-12. Verify private-key permissions
 ```
 
 Note:
@@ -592,20 +516,3 @@ Note:
 > A NAT Gateway is **not required for inbound SSH to a public EC2 instance**. NAT Gateway is primarily used to provide outbound internet connectivity for resources in private subnets.
 
 ---
-
-# ✅ Checklist
-
-- [ ] Understand SSH
-- [ ] Understand port 22
-- [ ] Understand SSH keys
-- [ ] Generate key pair
-- [ ] Understand `authorized_keys`
-- [ ] Understand `sshd_config`
-- [ ] Use `ssh`
-- [ ] Use `scp`
-- [ ] Secure SSH
-- [ ] Connect to EC2
-- [ ] Troubleshoot SSH
-- [ ] Understand Security Group SSH rules
-- [ ] Understand public subnet requirements
-- [ ] Complete EC2 SSH lab
